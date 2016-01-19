@@ -141,8 +141,12 @@ public class EdgeConstructor {
         int gridSizeX = (int)(Math.pow(2, (int)(Math.ceil((double)(dimension / 2)))));
         int gridSizeY = (int)(Math.pow(2, (int)(Math.floor((double)(dimension / 2)))));
 
+        // new instance of Grid
         grid = new Grid(gridSizeX, gridSizeY);
 
+        // goes through all connecting vertices and computes the shortest distance between each pair of
+        // vertices by using a function in Grid object. The sum of all distances between connecting vertices
+        // is by definition the wirelength of this particular embedding/ordering
         for (int i = 0; i < numberOfVertices; i++) {
             listLength = vertexList[i].getAdjacentListLength();
             for (int j = 0; j < listLength; j++) {
@@ -151,12 +155,13 @@ public class EdgeConstructor {
             }
         }
         if(!minimumFound) {
+            // finds the minimum wirelength out of all embeddings that pass through this function
             if ((wirelength < minimumWirelength) || (minimumWirelength == 0)) {
                 minimumWirelength = wirelength;
             }
         }
 
-        //enable this if you want the wirelengths of all the orderings printed out
+        //enable this if you want the wirelengths of ALL the orderings printed out
         //------------------------------------------------------------
 //        System.out.print("Ordering: [");
 //        for (int i = 0; i < arr.length - 1; i++) {
@@ -169,16 +174,14 @@ public class EdgeConstructor {
         return wirelength;
     }
 
-    private int factorial(int n) {
-        return n <= 1 ? 1 : n*factorial(n-1);
-    }
-
     private void computeAllWirelengths() {
         System.out.println("\n\n     ***Lexicographic Embeddings***");
 
         int gridSizeX;
         int gridSizeY;
 
+        // goes through all possible combinations of grid dimensions to find the best host graph for
+        // the lexicographic embedding
         for (int i = 0; i <= dimension; i++) {
             gridSizeX = (int)(Math.pow(2, i));
             gridSizeY = (int)(Math.pow(2, dimension - i));
@@ -196,6 +199,8 @@ public class EdgeConstructor {
         String previous = null;
         String tempID;
 
+        // generates a new instance of each vertex along with a binaryID which will be used
+        // later to determine which vertices are connected by an edge
         for (int count = 0; count < numberOfVertices; count++) {
             if(count != 0) {
                 previous = vertexList[count - 1].getID();
@@ -206,6 +211,7 @@ public class EdgeConstructor {
     }
 
     private void generateHypercubeAndComplementEdges() {
+        // goes through all combinations of vertex pairs to determine if they need to be connected
         for (int i = 0; i < numberOfVertices; i++) {
             for (int j = 0; j < numberOfVertices; j++) {
                 if(i == j) {
@@ -227,6 +233,8 @@ public class EdgeConstructor {
         int listLength;
         int vertexIndex;
 
+        // we do not want to double count edges so if one vertex is adjacent to the other
+        // then it is redundant for it to be the other way around
         for (int i = 0; i < numberOfVertices; i++) {
             listLength = vertexList[i].getAdjacentListLength();
             //looking at the list of adjacent vertices for vertexList[i]
@@ -246,7 +254,8 @@ public class EdgeConstructor {
         int wirelength = 0;
         int vertexIndex;
 
-        //allows for us to compute all the edges we previously created and reduced
+        // looking at all the edges we have formed, we can accumulate the distances between them in order
+        // to calculate the total wirelength
         for (int i = 0; i < numberOfVertices; i++) {
             listLength = vertexList[i].getAdjacentListLength();
             for (int j = 0; j < listLength; j++) {
@@ -254,15 +263,16 @@ public class EdgeConstructor {
                 wirelength += grid.getLexPathLength(i, vertexIndex);
             }
         }
-
-        int gridX = grid.getGridDimensionX();
-        int gridY = grid.getGridDimensionY();
-
-        System.out.println("WL(AQ^" + dimension + ",M[" + gridY + "x" + gridX + "]) = " + wirelength);
+        // we wish to find the minimum wirelength over all types of grids
         if ((wirelength < minimumWirelength) || (minimumWirelength == 0)) {
             minimumWirelength = wirelength;
         }
 
+        // the following lines are purely for presentation
+        int gridX = grid.getGridDimensionX();
+        int gridY = grid.getGridDimensionY();
+
+        System.out.println("WL(AQ^" + dimension + ",M[" + gridY + "x" + gridX + "]) = " + wirelength);
     }
 
 

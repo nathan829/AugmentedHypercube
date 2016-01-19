@@ -38,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7536946">
+              <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="method#Menu#0;class#Menu#0" expanded="false" />
@@ -59,16 +59,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EdgeConstructor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EdgeConstructor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EdgeConstructor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.16448802">
-              <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="264" column="9" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
               <folding>
                 <element signature="method#EdgeConstructor#0;class#EdgeConstructor#0" expanded="false" />
                 <element signature="method#start#0;class#EdgeConstructor#0" expanded="false" />
                 <element signature="method#manualStart#0;class#EdgeConstructor#0" expanded="false" />
                 <element signature="method#populateIntArray#0;class#EdgeConstructor#0" expanded="false" />
+                <element signature="method#computeWirelengthForCustomOrdering#0;class#EdgeConstructor#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -78,8 +79,12 @@
         <entry file="file://$PROJECT_DIR$/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-              <folding />
+              <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <folding>
+                <element signature="method#Grid#0;class#Grid#0" expanded="false" />
+                <element signature="method#getLexPathLength#0;class#Grid#0" expanded="false" />
+                <element signature="method#getCustomPathLength#0;class#Grid#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,7 +93,7 @@
         <entry file="file://$PROJECT_DIR$/Vertex.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="method#Vertex#0;class#Vertex#0" expanded="false" />
                 <element signature="method#removeAdjacentFromList#0;class#Vertex#0" expanded="false" />
@@ -113,9 +118,12 @@
         <entry file="file://$PROJECT_DIR$/InputHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="method#getMenuInt#0;class#InputHandler#0" expanded="false" />
+                <element signature="method#getDimensionInt#0;class#InputHandler#0" expanded="false" />
+                <element signature="method#getInt#0;class#InputHandler#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -125,12 +133,8 @@
         <entry file="file://$PROJECT_DIR$/Binary.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
-              <folding>
-                <element signature="method#getNext#0;class#Binary#0" expanded="false" />
-                <element signature="method#hypercubeEdgeTest#0;class#Binary#0" expanded="false" />
-                <element signature="method#complementEdgeTest#0;class#Binary#0" expanded="false" />
-              </folding>
+              <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,12 +158,12 @@
       <list>
         <option value="$PROJECT_DIR$/Main.java" />
         <option value="$PROJECT_DIR$/Calculator.java" />
-        <option value="$PROJECT_DIR$/Binary.java" />
-        <option value="$PROJECT_DIR$/Vertex.java" />
         <option value="$PROJECT_DIR$/InputHandler.java" />
-        <option value="$PROJECT_DIR$/Grid.java" />
         <option value="$PROJECT_DIR$/Menu.java" />
         <option value="$PROJECT_DIR$/EdgeConstructor.java" />
+        <option value="$PROJECT_DIR$/Grid.java" />
+        <option value="$PROJECT_DIR$/Vertex.java" />
+        <option value="$PROJECT_DIR$/Binary.java" />
       </list>
     </option>
   </component>
@@ -570,7 +574,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -603,7 +607,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -651,6 +655,7 @@
             <element signature="method#start#0;class#EdgeConstructor#0" expanded="false" />
             <element signature="method#manualStart#0;class#EdgeConstructor#0" expanded="false" />
             <element signature="method#populateIntArray#0;class#EdgeConstructor#0" expanded="false" />
+            <element signature="method#computeWirelengthForCustomOrdering#0;class#EdgeConstructor#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -659,7 +664,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="38" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
+            <element signature="method#getLexPathLength#0;class#Grid#0" expanded="false" />
+            <element signature="method#getCustomPathLength#0;class#Grid#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -690,6 +699,9 @@
           <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="method#getMenuInt#0;class#InputHandler#0" expanded="false" />
+            <element signature="method#getDimensionInt#0;class#InputHandler#0" expanded="false" />
+            <element signature="method#getInt#0;class#InputHandler#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -698,61 +710,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
-          <folding>
-            <element signature="method#getNext#0;class#Binary#0" expanded="false" />
-            <element signature="method#hypercubeEdgeTest#0;class#Binary#0" expanded="false" />
-            <element signature="method#complementEdgeTest#0;class#Binary#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="method#Vertex#0;class#Vertex#0" expanded="false" />
-            <element signature="method#removeAdjacentFromList#0;class#Vertex#0" expanded="false" />
-            <element signature="method#shuffleDownList#0;class#Vertex#0" expanded="false" />
-            <element signature="method#adjacentTest#0;class#Vertex#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InputHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Binary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="113" column="33" selection-start-line="113" selection-start-column="33" selection-end-line="113" selection-end-column="33" />
-          <folding>
-            <element signature="method#getNext#0;class#Binary#0" expanded="false" />
-            <element signature="method#hypercubeEdgeTest#0;class#Binary#0" expanded="false" />
-            <element signature="method#complementEdgeTest#0;class#Binary#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Calculator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -768,10 +725,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Menu.java">
+    <entry file="file://$PROJECT_DIR$/Binary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InputHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#getMenuInt#0;class#InputHandler#0" expanded="false" />
+            <element signature="method#getDimensionInt#0;class#InputHandler#0" expanded="false" />
+            <element signature="method#getInt#0;class#InputHandler#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="method#Vertex#0;class#Vertex#0" expanded="false" />
+            <element signature="method#removeAdjacentFromList#0;class#Vertex#0" expanded="false" />
+            <element signature="method#shuffleDownList#0;class#Vertex#0" expanded="false" />
+            <element signature="method#adjacentTest#0;class#Vertex#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Grid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="method#Grid#0;class#Grid#0" expanded="false" />
+            <element signature="method#getLexPathLength#0;class#Grid#0" expanded="false" />
+            <element signature="method#getCustomPathLength#0;class#Grid#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EdgeConstructor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="264" column="9" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
+          <folding>
+            <element signature="method#EdgeConstructor#0;class#EdgeConstructor#0" expanded="false" />
+            <element signature="method#start#0;class#EdgeConstructor#0" expanded="false" />
+            <element signature="method#manualStart#0;class#EdgeConstructor#0" expanded="false" />
+            <element signature="method#populateIntArray#0;class#EdgeConstructor#0" expanded="false" />
+            <element signature="method#computeWirelengthForCustomOrdering#0;class#EdgeConstructor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7536946">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="method#Menu#0;class#Menu#0" expanded="false" />
@@ -783,19 +808,6 @@
             <element signature="method#getDimensionFromUser#0;class#Menu#0" expanded="false" />
             <element signature="method#computeQuantities#0;class#Menu#0" expanded="false" />
             <element signature="method#displayQuantities#0;class#Menu#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EdgeConstructor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16448802">
-          <caret line="97" column="48" selection-start-line="97" selection-start-column="48" selection-end-line="97" selection-end-column="48" />
-          <folding>
-            <element signature="method#EdgeConstructor#0;class#EdgeConstructor#0" expanded="false" />
-            <element signature="method#start#0;class#EdgeConstructor#0" expanded="false" />
-            <element signature="method#manualStart#0;class#EdgeConstructor#0" expanded="false" />
-            <element signature="method#populateIntArray#0;class#EdgeConstructor#0" expanded="false" />
           </folding>
         </state>
       </provider>

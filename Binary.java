@@ -2,7 +2,7 @@
  * Created by Nathan on 18/01/2016.
  */
 public class Binary {
-
+    // dimension passed by EdgeConstructor
     private int dimension;
 
     public Binary(int dimension) {
@@ -11,6 +11,7 @@ public class Binary {
 
     public String getNext(String previousID) {
         String returnString = "";
+        // makes sure the first element will be a string full of 0's
         if (previousID == null) {
             for (int i = 0; i < dimension; i++) {
                 returnString += "0";
@@ -18,13 +19,17 @@ public class Binary {
             return returnString;
         }
         else {
+            // will add 1 to the previous string
             returnString = previousID;
         }
 
+        // breaks up the string into a character array, easier for bitwise comparisons
         char[] binaryString = returnString.toCharArray();
 
+        // assumes an initial carry from first element 000...0
         boolean carry = true;
 
+        // algorithm for binary addition. Adds 1 to the previous string and then return result
         for (int k = dimension - 1; k >= 0; k--) {
             if (binaryString[k] == '0') {
                 if (carry) {
@@ -51,6 +56,7 @@ public class Binary {
 
         returnString = "";
 
+        // builds a string out of the character array
         for (int j = 0; j < dimension; j++) {
             returnString += Character.toString(binaryString[j]);
         }
@@ -62,8 +68,10 @@ public class Binary {
         char[] arr1 = str1.toCharArray();
         char[] arr2 = str2.toCharArray();
 
+        // will count the number of difference in bits between str1 and str2
         int numberDifferences = 0;
 
+        // obvious tests for non-equal strings
         if(str1.length() != str2.length() || str1.isEmpty() || str2.isEmpty()) {
             return false;
         }
@@ -88,11 +96,13 @@ public class Binary {
 
         boolean complement = false;
 
+        // obvious test for non-equal strings
         if(str1.length() != str2.length() || str1.isEmpty() || str2.isEmpty()) {
             return false;
         }
 
-        // Loop through the entire string
+        // from left to right, when the bits become complement they must stay complement til the end
+        // of the string
         for (int i = 0; i < str1.length(); i++) {
             // Checking that the strings are the same (!complement)
             if (!complement) {
@@ -114,6 +124,8 @@ public class Binary {
         char[] bits = binaryStirng.toCharArray();
         int returnNumber = 0;
 
+        // by the definition of binary expressed as an integer, adding powers of 2 when
+        // the respective bit is a 1
         for(int i = dimension - 1; i >= 0; i--) {
             if(bits[i] == '1') {
                 returnNumber += (int)Math.pow(2,(dimension - 1) - i);
