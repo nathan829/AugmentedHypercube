@@ -1,0 +1,6 @@
+[1. # of Vertices/Edges] [2. Lexicographic Wirelength] [3. Optimal Embedding] [4. Manual Order] [5. Exit]
+Enter the required dimension of the Augmented Hypercube
+Enter an ordering of vertices from 0 to 16383 and no repeats:
+221184 edges created over 16384 vertices
+Calculated Wirelength is: 4677632
+[1. # of Vertices/Edges] [2. Lexicographic Wirelength] [3. Optimal Embedding] [4. Manual Order] [5. Exit]
