@@ -120,8 +120,8 @@ public class Binary {
         return true;
     }
 
-    public int binaryStringToInt(String binaryStirng) {
-        char[] bits = binaryStirng.toCharArray();
+    public int binaryStringToInt(String binaryString) {
+        char[] bits = binaryString.toCharArray();
         int returnNumber = 0;
 
         // by the definition of binary expressed as an integer, adding powers of 2 when
@@ -134,5 +134,4 @@ public class Binary {
 
         return returnNumber;
     }
-
 }
