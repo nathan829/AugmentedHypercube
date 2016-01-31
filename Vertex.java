@@ -11,6 +11,10 @@ public class Vertex {
     // dimension passed by EdgeConstructor
     private int dimension;
 
+    private int index;
+
+    private int value;
+
     public Vertex(String id, int dimension) {
         // setting values
         this.id = id;
@@ -18,6 +22,11 @@ public class Vertex {
         adjacentIndex = 0;
         // the maximum number of adjacent vertices for given dimension
         adjacentIDs = new String[2*dimension - 1];
+    }
+
+    public Vertex(int index, int value) {
+        this.index = index;
+        this.value = value;
     }
 
     public void setAdjacent(String adjacentVertexID) {
@@ -66,5 +75,13 @@ public class Vertex {
 
     public String getAdjacent(int index) {
         return adjacentIDs[index];
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public int getIndex() {
+        return index;
     }
 }
