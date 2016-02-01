@@ -108,6 +108,9 @@ public class Binary {
             if (!complement) {
                 if (arr1[i] != arr2[i]) {
                     complement = true;
+                    if ((i == str1.length() - 1) && (arr1[i-1] == arr2[i-1])) {
+                        return false;
+                    }
                 }
             }
             else {
