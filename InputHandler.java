@@ -126,6 +126,34 @@ public class InputHandler {
         return value;
     }
 
+    public int getIncompleteVertices(int dimension) {
+        int max = (int)Math.pow(2, dimension);
+        int min = (int)Math.pow(2, dimension - 1);
+        boolean valid = false;
+        int value = 0;
+        while (!valid) {
+            try {
+                if (scanner.hasNextInt()) {
+                    value = scanner.nextInt();
+                    valid = true;
+                    if (value < min || value > max) {
+                        valid = false;
+                        throw new Exception("ERROR: Please enter dimension between " + min + " and " + max);
+                    }
+                }
+                else {
+                    throw new Exception("ERROR: Please enter a whole number");
+                }
+            }
+            catch (Exception error) {
+                System.out.println(error.getMessage());
+                resetScanner();
+            }
+        }
+
+        return value;
+    }
+
     public char getYesNo() {
         boolean valid = false;
         String value = "";
