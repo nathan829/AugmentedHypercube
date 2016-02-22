@@ -23,8 +23,6 @@ public class EdgeConstructor {
     private final int rightBottom1Index;
     private final int rightBottom2Index;
 
-
-
     // binary object: needed for binary operations, comparisons and edge construction of bit string
     // represented vertices
     private Binary binary;
@@ -64,6 +62,8 @@ public class EdgeConstructor {
 
     // used only as a counter when printing all possible embeddings
     private int secondaryCounter = 0;
+
+    private int edgeCounter = 0;
 
     private boolean improvedOrdering;
     private boolean fixedVertices = false;
@@ -110,7 +110,7 @@ public class EdgeConstructor {
         generateHypercubeAndComplementEdges();
         removeEdgeCopies();
 
-        System.out.println("creating " + removalCount + " edges over " + numberOfVertices + " vertices");
+//        System.out.println("creating " + removalCount + " edges over " + numberOfVertices + " vertices");
 
         if (ordering) {
             // used for finding best grids for lexicographic
@@ -127,6 +127,10 @@ public class EdgeConstructor {
             // this function needs to be run again to find the minimal orderings, since minnimumFound = true;
            computeAllEmbeddings(gridOrdering);
         }
+
+//        String value  = binary.intToBinaryString(135);
+//        System.out.println(value);
+//        System.exit(0);
     }
 
     public void fixVertices() {
@@ -398,6 +402,8 @@ public class EdgeConstructor {
         }
 
         System.out.println("The minimum wirelength is " + minimumWirelength + " over all types of grids");
+        // getEdges();
+
         System.out.println("\n\n");
 
     }
@@ -425,8 +431,8 @@ public class EdgeConstructor {
                     continue;
                 }
                 //adding the hypercube edges
-                if(binary.hypercubeEdgeTest(vertexList[i].getID(),vertexList[j].getID())) {
-                    vertexList[i].setAdjacent(vertexList[j].getID());
+                else if(binary.hypercubeEdgeTest(vertexList[i].getID(),vertexList[j].getID())) {
+                   vertexList[i].setAdjacent(vertexList[j].getID());
                 }
                 //adding the complementary edges
                 else if(binary.complementEdgeTest(vertexList[i].getID(),vertexList[j].getID())) {
@@ -451,6 +457,25 @@ public class EdgeConstructor {
                 if (vertexList[vertexIndex].adjacentTest(vertexList[i].getID())) {
                     vertexList[vertexIndex].removeAdjacentFromList(vertexList[i].getID());
                     removalCount++;
+                }
+            }
+        }
+    }
+
+    private void removeEdgesFromRemovedVertices() {
+        int listLength;
+        int vertexIndex;
+
+        // we do not want to double count edges so if one vertex is adjacent to the other
+        // then it is redundant for it to be the other way around
+        for (int i = 0; i < numberOfVertices; i++) {
+            listLength = vertexList[i].getAdjacentListLength();
+            //looking at the list of adjacent vertices for vertexList[i]
+            for (int j = 0; j < listLength; j++) {
+                vertexIndex = binary.binaryStringToInt(vertexList[i].getAdjacent(j));
+                //if the vertex is pointing back, remove it from list
+                if (vertexIndex > numberOfVertices) {
+                    vertexList[i].removeAdjacentFromList(vertexList[vertexIndex].getID());
                 }
             }
         }
@@ -492,6 +517,46 @@ public class EdgeConstructor {
         }
 
         System.out.println("WL(AQ^" + dimension + ",M[" + gridY + "x" + gridX + "]) = " + wirelength);
+    }
+
+    public void setIncompleteVertices() {
+//        numberOfVertices = vertices;
+        generateVertices();
+        generateHypercubeAndComplementEdges();
+        removeEdgeCopies();
+
+        for (int i = 0; i < (int)Math.pow(2, dimension); i++) {
+
+//            removeEdgesFromRemovedVertices();
+            generateVertices();
+            generateHypercubeAndComplementEdges();
+            removeEdgeCopies();
+            // getEdges();
+            numberOfVertices--;
+            if (numberOfVertices <= (int)Math.pow(2, dimension - 1)) {
+                break;
+            }
+
+
+        }
+    }
+
+    private void getEdges() {
+        int listLength;
+        edgeCounter = 0;
+        int vertexIndex;
+        for (int i = 0; i < numberOfVertices; i++) {
+            listLength = vertexList[i].getAdjacentListLength();
+            //looking at the list of adjacent vertices for vertexList[i]
+            for (int j = 0; j < listLength; j++) {
+                edgeCounter++;
+                vertexIndex = binary.binaryStringToInt(vertexList[i].getAdjacent(j));
+                System.out.print("(" + binary.binaryStringToInt(vertexList[i].getID()) + "," + vertexIndex + ")   ");
+            }
+        }
+        System.out.println();
+
+        System.out.println("|E| for dimension " + dimension + " on " + numberOfVertices + " vertices is " + edgeCounter);
     }
 
 
