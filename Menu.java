@@ -23,7 +23,7 @@ public class Menu {
     private boolean improvedOrdering;
 
     // string literal constant, used for menu options
-    private static final String MENU_OPTIONS = "[1. Improved Ordering WL (Specific Grid)] [2. WL of all Grids] [3. Optimal Embedding] [4. Manual Order] [5. Exit]";
+    private static final String MENU_OPTIONS = "[1. Improved Ordering WL (Specific Grid)] [2. WL of all Grids] [3. Optimal Embedding] [4. Manual Order] [5. Incomplete AQ] [6. Exit] [7. Formula]";
 
     public Menu() {
         //creating instances of required objects
@@ -42,7 +42,7 @@ public class Menu {
     public void prompt() {
         while(running) {
             System.out.println(MENU_OPTIONS);
-            int selection = handler.getMenuInt(5);
+            int selection = handler.getMenuInt(7);
             directToTask(selection);
         }
     }
@@ -81,8 +81,17 @@ public class Menu {
                 manualConstructEdges();
                 break;
             case 5:
+                ordering = true;
+                improvedOrdering = false;
+                getDimensionFromUser();
+                incompleteHypercube();
+                break;
+            case 6:
                 terminate();
                 break;
+            case 7:
+                getDimensionFromUser();
+                formula();
         }
     }
 
@@ -96,6 +105,23 @@ public class Menu {
         else {
             constructEdges();
         }
+    }
+
+    private void formula() {
+//        System.out.println("Enter a number of nodes");
+//        int input = handler.getInt();
+//        calculator.calculateFormula(dimension, input);
+        System.out.println("Enter r1 and r1");
+        int r1 = handler.getInt();
+        int r2 = handler.getInt();
+        calculator.testEquation(r1, r2, dimension);
+    }
+
+    private void incompleteHypercube() {
+//        System.out.println("Enter the number of vertices m for the incomplete hypercube I^n_m");
+//        int vertices = handler.getIncompleteVertices(dimension);
+        EdgeConstructor constructor = new EdgeConstructor(dimension, ordering, improvedOrdering);
+        constructor.setIncompleteVertices();
     }
 
     private void terminate() {
